@@ -9,7 +9,9 @@
     "build:dev": "tsc -w",
     "start": "node --env-file=.env .",
     "start:dev": "node --env-file=.env --watch .",
-    "test": "jest"
+    "test": "jest",
+    "test:dev": "jest --watchAll",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
