@@ -1,5 +1,5 @@
 import { json, raw, type Request, type Response } from "express";
-import getPing from "./getPing";
+import getPing from "../getPing";
 
 describe("Given the function getPing", () => {
   describe("When it receives a request", () => {
