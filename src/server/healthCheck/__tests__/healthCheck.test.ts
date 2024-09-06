@@ -10,9 +10,9 @@ describe("Givent a GET / endpoint", () => {
 
       const response = await request(app).get(path).expect(statusCode);
 
-      const responseBody = response.body as { message: "Pong" };
+      const responseBody = response.body as { message: string };
 
-      expect(responseBody.message).toBe(expectedMessage);
+      expect(responseBody).toHaveProperty("message", expectedMessage);
     });
   });
 });
