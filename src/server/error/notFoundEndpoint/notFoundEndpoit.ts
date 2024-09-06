@@ -6,7 +6,7 @@ const notFoundEndpoint = (
   _res: Response,
   next: NextFunction,
 ): void => {
-  const error = new ServerError("Endpoind not found", 404);
+  const error = new ServerError("Endpoint not found", 404);
 
   next(error);
 };
