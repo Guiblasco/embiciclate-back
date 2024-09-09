@@ -2,8 +2,8 @@ import express from "express";
 import morgan from "morgan";
 import cors, { type CorsOptions } from "cors";
 import getPing from "./healthCheck/getPing.js";
-import notFoundEndpoint from "./error/notFoundEndpoint/notFoundEndpoit.js";
 import { generalError } from "./error/generalError/generalError.js";
+import notFoundError from "./error/notFoundEndpoint/notFoundError.js";
 
 const app = express();
 const origins: CorsOptions = {
@@ -21,7 +21,7 @@ app.use(morgan("dev"));
 
 app.get("/", getPing);
 
-app.use(notFoundEndpoint);
+app.use(notFoundError);
 app.use(generalError);
 
 export default app;
