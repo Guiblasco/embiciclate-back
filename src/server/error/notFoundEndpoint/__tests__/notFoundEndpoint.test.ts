@@ -1,19 +1,18 @@
-import { type NextFunction, type Request, type Response } from "express";
-import notFoundEndpoint from "../notFoundEndpoit";
-import ServerError from "../../ServerError/ServerError";
+import request from "supertest";
+import app from "../../../app";
 
-describe("Given the function notFoundEndpoint", () => {
-  describe("When it receives an unknown path", () => {
-    test("Then it should return the message Endpoint not found", () => {
-      const req: Partial<Request> = {};
-      const res: Partial<Response> = {};
-      const next: NextFunction = jest.fn();
+describe("Given the non-existent GET /barracuda endpoint", () => {
+  describe("When it receives a request", () => {
+    test("Then it should respond with 404 Endpoint not found", async () => {
+      const path = "/barracuda";
+      const expectedStatusCode = 404;
+      const expectedMessage = "Endpoint not found";
 
-      notFoundEndpoint(req as Request, res as Response, next);
+      const response = await request(app).get(path).expect(expectedStatusCode);
 
-      expect(next).toHaveBeenCalledWith(
-        new ServerError("Endpoint not found", 404),
-      );
+      const responseBody = response.body as { message: string };
+
+      expect(responseBody).toHaveProperty("message", expectedMessage);
     });
   });
 });
