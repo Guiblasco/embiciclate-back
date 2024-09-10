@@ -4,7 +4,7 @@ import cors, { type CorsOptions } from "cors";
 import getPing from "./healthCheck/getPing.js";
 import { generalError } from "./error/generalError/generalError.js";
 import notFoundError from "./error/notFoundError/notFoundError.js";
-import BikesController from "../bike/controller/BikesController.js";
+import BikesController from "../bike/controller/BikesController/BikesController.js";
 import Bike from "../bike/model/Bike.js";
 
 const app = express();
