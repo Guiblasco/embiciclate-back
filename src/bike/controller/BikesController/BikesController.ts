@@ -9,7 +9,7 @@ class BikesController implements BikesControllerStructure {
   getBikes = async (
     _req: Request,
     res: Response,
-    next: NextFunction,
+    _next: NextFunction,
   ): Promise<void> => {
     const bikes = await this.bikeModel.find().exec();
 
