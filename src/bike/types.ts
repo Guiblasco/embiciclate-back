@@ -1,8 +1,8 @@
 export interface BikeStructure {
-  id: string;
+  _id: string;
   brand: string;
   model: string;
-  wheelsize: string;
+  wheelsize: number;
   material: string;
   specs: string;
   imageUrl: string;
