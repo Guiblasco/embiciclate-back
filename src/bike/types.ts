@@ -7,4 +7,5 @@ export interface BikeStructure {
   specs: string;
   imageUrl: string;
   alternativeText: string;
+  mode: string;
 }
