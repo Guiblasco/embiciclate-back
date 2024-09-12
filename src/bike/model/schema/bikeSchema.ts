@@ -30,6 +30,10 @@ const bikeSchema = new Schema<BikeStructure>({
     type: String,
     required: true,
   },
+  mode: {
+    type: String,
+    required: true,
+  },
 });
 
 export default bikeSchema;
