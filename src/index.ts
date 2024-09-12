@@ -2,7 +2,7 @@ import chalk from "chalk";
 import startServer from "./server/startServer.js";
 import connectToDataBase from "./database/index.js";
 
-const port = process.env.PORT;
+const port = process.env.PORT ?? 3500;
 const databaseUrl = process.env.MONGODB_URL;
 
 if (!databaseUrl) {
