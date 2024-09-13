@@ -7,10 +7,42 @@
 	},
 	"item": [
 		{
+			"name": "GetPing",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://guillem-blasco-202406-back.onrender.com/",
+					"protocol": "https",
+					"host": [
+						"guillem-blasco-202406-back",
+						"onrender",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Bikes",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "https://guillem-blasco-202406-back.onrender.com/bikes",
+					"protocol": "https",
+					"host": [
+						"guillem-blasco-202406-back",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"bikes"
+					]
+				}
 			},
 			"response": []
 		}
