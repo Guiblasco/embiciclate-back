@@ -9,8 +9,9 @@ const bikeSchema = new Schema<BikeStructure>({
   model: {
     type: String,
     required: true,
+    unique: true,
   },
-  wheelsize: {
+  wheelSize: {
     type: Number,
     required: true,
   },

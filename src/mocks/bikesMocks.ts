@@ -5,7 +5,7 @@ export const bikesMocks: Array<Omit<BikeStructure, "_id">> = [
     brand: "Trek",
     model: "Madone sl 6",
     material: "Carbon",
-    wheelsize: 28,
+    wheelSize: 28,
     alternativeText: "una bici de carretera negra y amarilla",
     imageUrl:
       "https://media.trekbikes.com/image/upload/f_auto,fl_progressive:semi,q_auto,w_1920,h_1440,c_pad/MadoneSL6Disc_20_28714_A_Portrait",
@@ -17,7 +17,7 @@ export const bikesMocks: Array<Omit<BikeStructure, "_id">> = [
     brand: "Cannondale",
     model: "Scalpel",
     material: "Carbon",
-    wheelsize: 29,
+    wheelSize: 29,
     alternativeText: "una bici de doble suspensión de color negra y roja",
     imageUrl:
       "https://embed.widencdn.net/img/dorelrl/8ulv9inaab/1700px@1x/C24_C24254U_Scalpel_Crb_1_RRD_PD.webp?color=eff2f4&q=99",

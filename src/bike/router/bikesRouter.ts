@@ -8,4 +8,6 @@ const bikesController = new BikesController(Bike);
 
 bikesRouter.get("/", bikesController.getBikes);
 
+bikesRouter.post("/", bikesController.addBikes);
+
 export default bikesRouter;
