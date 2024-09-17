@@ -9,3 +9,5 @@ export interface BikeStructure {
   alternativeText: string;
   mode: string;
 }
+
+export type BikeStructureWithoutId = Omit<BikeStructure, "id">;
