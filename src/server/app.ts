@@ -26,7 +26,7 @@ app.get("/", getPing);
 
 app.use("/bikes", bikesRouter);
 
-app.use("/add-bike", bikesRouter);
+app.use("/bikes", bikesRouter);
 
 app.use(notFoundError);
 
