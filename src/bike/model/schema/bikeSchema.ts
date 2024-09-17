@@ -11,7 +11,7 @@ const bikeSchema = new Schema<BikeStructure>({
     required: true,
     unique: true,
   },
-  wheelsize: {
+  wheelSize: {
     type: Number,
     required: true,
   },
