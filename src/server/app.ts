@@ -7,6 +7,7 @@ import notFoundError from "./error/notFoundError/notFoundError.js";
 import bikesRouter from "../bike/router/bikesRouter.js";
 
 const app = express();
+app.use(express.json());
 
 const origins: CorsOptions = {
   origin: [
@@ -24,6 +25,8 @@ app.use(morgan("dev"));
 app.get("/", getPing);
 
 app.use("/bikes", bikesRouter);
+
+app.use("/add-bike", bikesRouter);
 
 app.use(notFoundError);
 
