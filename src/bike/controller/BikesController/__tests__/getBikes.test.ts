@@ -3,7 +3,6 @@ import { type BikeStructure } from "../../../types";
 import { type Model } from "mongoose";
 import BikesController from "../BikesController";
 import { bikesMocks } from "../../../../mocks/bikesMocks";
-import ServerError from "../../../../server/error/ServerError/ServerError";
 
 describe("Given the getBikes method from BikesController class", () => {
   describe("When it receives a request", () => {

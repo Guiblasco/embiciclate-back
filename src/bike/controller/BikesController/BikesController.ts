@@ -1,8 +1,7 @@
 import type { Model } from "mongoose";
 import { type Request, type Response, type NextFunction } from "express";
 import { type BikesControllerStructure } from "../types";
-import type { BikeStructure, BikeStructureWithoutId } from "../../types";
-import Bike from "../../model/Bike.js";
+import type { BikeStructure } from "../../types";
 import type ServerError from "../../../server/error/ServerError/ServerError";
 
 class BikesController implements BikesControllerStructure {
