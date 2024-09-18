@@ -10,4 +10,4 @@ export interface BikeStructure {
   mode: string;
 }
 
-export type BikeStructureWithoutId = Omit<BikeStructure, "id">;
+export type BikeStructureWithoutId = Omit<BikeStructure, "_id">;

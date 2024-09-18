@@ -29,9 +29,9 @@ class BikesController implements BikesControllerStructure {
   ): Promise<void> => {
     try {
       const bikeData = req.body;
-      await Bike.create(bikeData);
+      const addedBike = await Bike.create(bikeData);
 
-      res.status(201).json({ message: "Bike created succesfully" });
+      res.status(201).json({ bike: addedBike });
     } catch (error) {
       (error as ServerError).statusCode = 409;
       (error as ServerError).message = "Could not add the desired bike!";
