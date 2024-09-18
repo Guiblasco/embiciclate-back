@@ -4,7 +4,6 @@ import app from "../../../server/app";
 import { MongoMemoryServer } from "mongodb-memory-server";
 import mongoose from "mongoose";
 import connectToDataBase from "../../../database";
-import Bike from "../../model/Bike";
 
 let server: MongoMemoryServer;
 
