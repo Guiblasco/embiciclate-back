@@ -1,11 +1,11 @@
 import request from "supertest";
 import { MongoMemoryServer } from "mongodb-memory-server";
-import app from "../../../../server/app";
-import { type BikeStructure } from "../../../types";
-import connectToDataBase from "../../../../database";
-import Bike from "../../../model/Bike";
-import { bikesMocks } from "../../../../mocks/bikesMocks";
 import mongoose from "mongoose";
+import connectToDataBase from "../../../database";
+import { bikesMocks } from "../../../mocks/bikesMocks";
+import Bike from "../../model/Bike";
+import app from "../../../server/app";
+import { type BikeStructure } from "../../types";
 
 let server: MongoMemoryServer;
 
