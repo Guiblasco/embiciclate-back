@@ -19,17 +19,12 @@ class BikesController implements BikesControllerStructure {
   };
 
   addBikes = async (
-    req: Request<
-      Record<string, any>,
-      Record<string, any>,
-      BikeStructureWithoutId
-    >,
+    req: Request,
     res: Response,
     next: NextFunction,
   ): Promise<void> => {
     try {
-      const bikeData = req.body;
-      const addedBike = await Bike.create(bikeData);
+      const addedBike = await this.bikeModel.create(req.body);
 
       res.status(201).json({ bike: addedBike });
     } catch (error) {
