@@ -10,4 +10,6 @@ bikesRouter.get("/", bikesController.getBikes);
 
 bikesRouter.post("/", bikesController.addBikes);
 
+bikesRouter.delete("/:bikeId", bikesController.deleteBikeById);
+
 export default bikesRouter;
