@@ -12,6 +12,7 @@ app.use(express.json());
 const origins: CorsOptions = {
   origin: [
     "http://localhost:5173",
+    "http://localhost:4173",
     "https://guillem-blasco-202406-front.netlify.app",
   ],
 };
@@ -23,8 +24,6 @@ app.use(cors(origins));
 app.use(morgan("dev"));
 
 app.get("/", getPing);
-
-app.use("/bikes", bikesRouter);
 
 app.use("/bikes", bikesRouter);
 
