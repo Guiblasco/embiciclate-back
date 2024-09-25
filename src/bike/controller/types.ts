@@ -1,4 +1,5 @@
 import type { NextFunction, Request, Response } from "express";
+import { type BikeStructureWithoutId, type BikeStructure } from "../types";
 
 export interface BikesControllerStructure {
   getBikes: (req: Request, res: Response, next: NextFunction) => void;
@@ -7,3 +8,9 @@ export interface BikesControllerStructure {
 }
 
 export type RequestWithBikeId = Request<{ bikeId: string }>;
+
+export type RequestWithBike = Request<
+  Record<string, unknown>,
+  Record<string, unknown>,
+  BikeStructureWithoutId
+>;
