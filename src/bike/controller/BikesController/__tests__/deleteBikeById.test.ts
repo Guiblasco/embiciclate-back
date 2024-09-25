@@ -37,6 +37,7 @@ describe("Given the deleteBikeById method from the BikeController", () => {
     };
 
     const controller = new BikesController(bikeModel as Model<BikeStructure>);
+
     test("Then it should call the response's status method with 200", async () => {
       await controller.deleteBikeById(
         req as RequestWithBikeId,
@@ -47,14 +48,16 @@ describe("Given the deleteBikeById method from the BikeController", () => {
       expect(res.status).toHaveBeenCalledWith(200);
     });
 
-    test("Then it should call response's json method with the bike deleted", async () => {
+    test("Then it should call response's json method with the message Successfully deleted bike", async () => {
+      const expectedMessage = "Successfully deleted bike";
+
       await controller.deleteBikeById(
         req as RequestWithBikeId,
         res as Response,
         next,
       );
 
-      expect(res.json).toHaveBeenCalledWith({ bikeToDelete: bikeMock });
+      expect(res.json).toHaveBeenCalledWith({ message: expectedMessage });
     });
   });
 });

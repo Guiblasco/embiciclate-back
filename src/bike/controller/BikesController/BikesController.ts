@@ -62,7 +62,7 @@ class BikesController implements BikesControllerStructure {
         throw new Error(`Bike not found with ID: ${bikeToDelete}`);
       }
 
-      res.status(200).json({ bikeToDelete });
+      res.status(200).json({ message: "Successfully deleted bike" });
     } catch (error) {
       console.log(chalk.redBright((error as { message: string }).message));
 
