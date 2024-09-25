@@ -22,7 +22,7 @@ afterEach(async () => {
   await Bike.deleteMany();
 });
 
-describe("Given the DELETE /bikes endpoint", () => {
+describe("Given the DELETE /bikes/bikeId endpoint", () => {
   describe("When it receives a request with one bike id", () => {
     beforeEach(async () => {
       await Bike.create(bikesMocks[0]);

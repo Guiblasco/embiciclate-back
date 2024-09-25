@@ -1,8 +1,9 @@
-import { json, type NextFunction, type Response } from "express";
+import { type NextFunction, type Response } from "express";
 import { type BikeStructure } from "../../../types";
 import { type RequestWithBikeId } from "../../types";
 import { type Model } from "mongoose";
 import BikesController from "../BikesController";
+import ServerError from "../../../../server/error/ServerError/ServerError";
 
 const bikeMock: BikeStructure = {
   _id: "1234",
@@ -58,6 +59,27 @@ describe("Given the deleteBikeById method from the BikeController", () => {
       );
 
       expect(res.json).toHaveBeenCalledWith({ message: expectedMessage });
+    });
+
+    test("Then it should call next function with an error", async () => {
+      const bikeModel: Partial<Model<BikeStructure>> = {
+        findByIdAndDelete: jest.fn().mockResolvedValue(null),
+      };
+
+      const controller = new BikesController(bikeModel as Model<BikeStructure>);
+
+      const findBikeError = new ServerError(
+        "Bike not found with provided Id",
+        404,
+      );
+
+      await controller.deleteBikeById(
+        req as RequestWithBikeId,
+        res as Response,
+        next,
+      );
+
+      expect(next).toHaveBeenCalledWith(findBikeError);
     });
   });
 });

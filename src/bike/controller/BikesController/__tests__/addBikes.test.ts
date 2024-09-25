@@ -1,4 +1,4 @@
-import { type NextFunction, type Request, type Response } from "express";
+import { type NextFunction, type Response } from "express";
 import mongoose, { type Model } from "mongoose";
 import BikesController from "../BikesController";
 import { type BikeStructure } from "../../../types";
