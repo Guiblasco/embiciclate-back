@@ -3,6 +3,7 @@ import { type Request, type Response, type NextFunction } from "express";
 import {
   type RequestWithBikeId,
   type BikesControllerStructure,
+  type RequestWithBike,
 } from "../types";
 import type { BikeStructure } from "../../types";
 import ServerError from "../../../server/error/ServerError/ServerError.js";
@@ -28,22 +29,22 @@ class BikesController implements BikesControllerStructure {
   };
 
   addBikes = async (
-    req: Request,
+    req: RequestWithBike,
     res: Response,
     next: NextFunction,
   ): Promise<void> => {
+    const { model } = req.body;
     try {
+      const bikeAtDataBase = await this.bikeModel.findOne({ model });
+
       const addedBike = await this.bikeModel.create(req.body);
 
-      if (!addedBike) {
+      if (bikeAtDataBase) {
         throw new Error(`Bike already exist!`);
       }
 
       res.status(201).json({ bike: addedBike });
     } catch (error) {
-      (error as ServerError).statusCode = 409;
-      (error as ServerError).message = "Could not add the desired bike!";
-
       next(error);
     }
   };
