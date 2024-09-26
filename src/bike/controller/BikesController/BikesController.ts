@@ -15,7 +15,7 @@ class BikesController implements BikesControllerStructure {
   getBikes = async (
     _req: Request,
     res: Response,
-    _next: NextFunction,
+    next: NextFunction,
   ): Promise<void> => {
     try {
       const bikes = await this.bikeModel.find().exec();
@@ -25,7 +25,9 @@ class BikesController implements BikesControllerStructure {
       }
 
       res.status(200).json({ bikes });
-    } catch (error) {}
+    } catch (error) {
+      next(error);
+    }
   };
 
   addBikes = async (
