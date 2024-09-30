@@ -39,11 +39,11 @@ class BikesController implements BikesControllerStructure {
     try {
       const bikeAtDataBase = await this.bikeModel.findOne({ model });
 
-      const addedBike = await this.bikeModel.create(req.body);
-
       if (bikeAtDataBase) {
-        throw new Error(`Bike already exist!`);
+        throw new ServerError(`Bike already exist!`, 409);
       }
+
+      const addedBike = await this.bikeModel.create(req.body);
 
       res.status(201).json({ bike: addedBike });
     } catch (error) {
