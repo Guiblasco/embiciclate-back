@@ -39,10 +39,9 @@ describe("Given the POST '/bikes' endpoint", () => {
         .send(bike)
         .expect(statusCode);
 
-      const responseBody = response.body as { bike: BikeStructure };
+      const responseBody = response.body as BikeStructure;
 
-      expect(responseBody).toHaveProperty("bike");
-      expect(responseBody.bike.brand).toBe("trek");
+      expect(responseBody.brand).toBe("trek");
     });
   });
 });
