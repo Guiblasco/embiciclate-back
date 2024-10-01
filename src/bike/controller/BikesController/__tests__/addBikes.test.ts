@@ -94,7 +94,7 @@ describe("Given de method addBikes from BikesController class", () => {
         next,
       );
 
-      expect(res.json).toHaveBeenCalledWith({ bike: req.body });
+      expect(res.json).toHaveBeenCalledWith(req.body);
     });
   });
 
