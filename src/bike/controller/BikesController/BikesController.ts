@@ -75,6 +75,32 @@ class BikesController implements BikesControllerStructure {
       next(findBikeError);
     }
   };
+
+  getBikeById = async (
+    req: RequestWithBikeId,
+    res: Response,
+    next: NextFunction,
+  ): Promise<void> => {
+    const { bikeId } = req.params;
+
+    try {
+      const bikeToShow = await this.bikeModel.findById(bikeId).exec();
+
+      if (!bikeToShow) {
+        throw new Error(`Bike not found with ID: ${bikeToShow}`);
+      }
+
+      res.status(200).json({ bikeToShow });
+    } catch (error) {
+      console.log(chalk.redBright((error as { message: string }).message));
+
+      const findBikeError = new ServerError(
+        "Bike not found with provided Id",
+        404,
+      );
+      next(findBikeError);
+    }
+  };
 }
 
 export default BikesController;
