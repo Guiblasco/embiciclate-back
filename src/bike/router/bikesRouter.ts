@@ -8,6 +8,8 @@ const bikesController = new BikesController(Bike);
 
 bikesRouter.get("/", bikesController.getBikes);
 
+bikesRouter.get("/:bikeId", bikesController.getBikeById);
+
 bikesRouter.post("/", bikesController.addBikes);
 
 bikesRouter.delete("/:bikeId", bikesController.deleteBikeById);
