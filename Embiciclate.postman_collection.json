@@ -45,6 +45,81 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "DeleteBike",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://guillem-blasco-202406-back.onrender.com/bikes/66df59273cd2e052040c9e9a",
+					"protocol": "https",
+					"host": [
+						"guillem-blasco-202406-back",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"bikes",
+						"66df59273cd2e052040c9e9a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateBike",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n  \"brand\": \"BMC\",\r\n  \"model\": \"Modelaso\",\r\n  \"alternativeText\": \"Bicicleta de carretera BMC Teammachine SLR01 de carbono\",\r\n  \"specs\": \"Cuadro de carbono Premium Carbon, grupo SRAM Red eTap, frenos de disco hidráulicos\",\r\n  \"imageUrl\": \"https://i.ibb.co/gvr77Fb/bmc-teammachine-slr01.webp\",\r\n  \"material\": \"Carbono\",\r\n  \"wheelSize\": 28,\r\n  \"mode\": \"Carretera\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://guillem-blasco-202406-back.onrender.com/bikes",
+					"protocol": "https",
+					"host": [
+						"guillem-blasco-202406-back",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"bikes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://guillem-blasco-202406-back.onrender.com/bikes/66df57923cd2e052040c9e96",
+					"protocol": "https",
+					"host": [
+						"guillem-blasco-202406-back",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"bikes",
+						"66df57923cd2e052040c9e96"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
